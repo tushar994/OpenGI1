@@ -25,6 +25,8 @@ int rotate_object = 0;
 // for translation of camera
 int cam_x = 0, cam_y = 0, cam_z = 0;
 int cam_speed = 0.1;
+// speed of object translation
+int object_speed = 0.1;
 /* Render the scene with openGL */
 /* Edit this function according to your assignment */
 void draw() {
@@ -62,10 +64,13 @@ void draw() {
 }
 
 void tick_input(GLFWwindow *window) {
+    // for object moving
     int left  = glfwGetKey(window, GLFW_KEY_LEFT);
     int right = glfwGetKey(window, GLFW_KEY_RIGHT);
     int up  = glfwGetKey(window, GLFW_KEY_UP);
     int down = glfwGetKey(window, GLFW_KEY_DOWN);
+    int m = glfwGetKey(window, GLFW_KEY_M);
+    int n = glfwGetKey(window, GLFW_KEY_N);
     // for camera translation
     int a  = glfwGetKey(window, GLFW_KEY_A);
     int d = glfwGetKey(window, GLFW_KEY_D);
@@ -91,6 +96,24 @@ void tick_input(GLFWwindow *window) {
     }
     if(z){
         cam_z += cam_speed;
+    }
+    if(left){
+        ball1.position.z +=object_speed;
+    }
+    if(right){
+        ball1.position.z -= object_speed;
+    }
+    if(up){
+        ball1.position.y += object_speed;
+    }
+    if(down){
+        ball1.position.y -= object_speed;
+    }
+    if(m){
+        ball1.position.x += object_speed;
+    }
+    if(n){
+        ball1.position.x -= object_speed;
     }
 
 }

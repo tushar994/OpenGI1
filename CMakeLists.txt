@@ -30,6 +30,10 @@ target_include_directories("glad" PRIVATE "${GLAD_DIR}/include")
 target_include_directories(${PROJECT_NAME} PRIVATE "${GLAD_DIR}/include")
 target_link_libraries(${PROJECT_NAME} "glad" "${CMAKE_DL_LIBS}")
 
+# glm 
+set(GLM_DIR "${LIB_DIR}/glm")
+target_include_directories(${PROJECT_NAME} PRIVATE "${GLM_DIR}")
+
 # MAC
 include(FindPkgConfig)
 if (NOT APPLE)
@@ -43,10 +47,6 @@ if (APPLE)
 endif()
 
 # GLEW
-find_package(GLEW REQUIRED)
-target_link_libraries(${PROJECT_NAME} GLEW::GLEW)
-
-#glm
-pkg_check_modules(GLM REQUIRED glm)
-include_directories(${GLM_INCLUDE_DIRS})
-target_link_libraries (${PROJECT_NAME} ${GLM_LIBRARIES})
+pkg_check_modules(GLEW REQUIRED glew)
+include_directories(${GLEW_INCLUDE_DIRS})
+target_link_libraries (${PROJECT_NAME} ${GLEW_LIBRARIES})
