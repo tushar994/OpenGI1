@@ -1,11 +1,11 @@
-#include "ball.h"
+#include "hexagonal_dipyramid.h"
 #include "main.h"
 
+speed = 1;
 Hexagonal_dipyramid::Hexagonal_dipyramid(float x, float y, color_t color)
 {
     this->position = glm::vec3(x, y, 0);
     this->rotation = 0;
-    speed = 1;
     float a = 1.0;
     float b = sqrt(3)/2
     float c = 1/2;
@@ -47,9 +47,9 @@ Hexagonal_dipyramid::Hexagonal_dipyramid(float x, float y, color_t color)
 
 void Hexagonal_dipyramid::draw(glm::mat4 VP)
 {
-    Matrices.model = glm::mat4(a);
+    Matrices.model = glm::mat4(1.0f);
     glm::mat4 translate = glm::translate(this->position); // glTranslatef
-    glm::mat4 rotate = glm::rotate((float)(this->rotation * M_PI / 18d), glm::vec3(1, 0, 0));
+    glm::mat4 rotate = glm::rotate((float)(this->rotation * M_PI / 180.0f), glm::vec3(1, 0, 0));
     // No need as coords centered at 0, 0, 0 of cube arouund which we waant to rotate
     // rotate          = rotate * glm::translate(glm::vec3(0, -0.6, 0));
     Matrices.model *= (translate * rotate);
