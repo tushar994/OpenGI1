@@ -22,6 +22,9 @@ Timer t60(1.0 / 60);
 
 int rotate_camera = 0;
 int rotate_object = 0;
+// for translation of camera
+int cam_x = 0, cam_y = 0, cam_z = 0;
+int cam_speed = 0.1;
 /* Render the scene with openGL */
 /* Edit this function according to your assignment */
 void draw() {
@@ -33,9 +36,10 @@ void draw() {
     glUseProgram (programID);
 
     // Eye - Location of camera. Don't change unless you are sure!!
-    glm::vec3 eye ( 5*cos(camera_rotation_angle*M_PI/180.0f), 0, 5*sin(camera_rotation_angle*M_PI/180.0f) );
+    glm::vec3 eye ( cam_x + 5*cos(camera_rotation_angle*M_PI/180.0f), cam_y+ 0, cam_z + 5*sin(camera_rotation_angle*M_PI/180.0f) );
     // Target - Where is the camera looking at.  Don't change unless you are sure!!
-    glm::vec3 target (0, 0, 0);
+    // glm::vec3 target (0, 0, 0);
+    glm::vec3 target (cam_x, cam_y, cam_z);
     // Up - Up vector defines tilt of camera.  Don't change unless you are sure!!
     glm::vec3 up (0, 1, 0);
 
@@ -60,9 +64,35 @@ void draw() {
 void tick_input(GLFWwindow *window) {
     int left  = glfwGetKey(window, GLFW_KEY_LEFT);
     int right = glfwGetKey(window, GLFW_KEY_RIGHT);
-    if (left) {
+    int up  = glfwGetKey(window, GLFW_KEY_UP);
+    int down = glfwGetKey(window, GLFW_KEY_DOWN);
+    // for camera translation
+    int a  = glfwGetKey(window, GLFW_KEY_A);
+    int d = glfwGetKey(window, GLFW_KEY_D);
+    int w  = glfwGetKey(window, GLFW_KEY_W);
+    int s = glfwGetKey(window, GLFW_KEY_S);
+    int z  = glfwGetKey(window, GLFW_KEY_Z);
+    int x = glfwGetKey(window, GLFW_KEY_X);
+    if (a) {
         // Do something
+        cam_z += cam_speed;
     }
+    if(d){
+        cam_z -= cam_speed;
+    }
+    if(w){
+        cam_y += cam_speed;
+    }
+    if(s){
+        cam_y -= cam_speed;
+    }
+    if(x){
+        cam_x -= cam_speed;
+    }
+    if(z){
+        cam_z += cam_speed;
+    }
+
 }
 
 void tick_elements() {

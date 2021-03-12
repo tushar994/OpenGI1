@@ -3,3 +3,5 @@
 
 `p` - rotate camera
 `o` - rotate object
+
+`wasdzx` - translate camera
