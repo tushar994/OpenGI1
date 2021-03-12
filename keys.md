@@ -5,3 +5,5 @@
 `o` - rotate object
 
 `wasdzx` - translate camera
+
+`arrowws keys + nm` - object

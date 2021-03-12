@@ -70,4 +70,3 @@ void Ball::tick() {
     // this->position.x -= speed;
     // this->position.y -= speed;
 }
-
