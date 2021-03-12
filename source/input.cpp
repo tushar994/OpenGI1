@@ -59,7 +59,7 @@ void keyboardChar(GLFWwindow *window, unsigned int key) {
     case 'p':
         rotate_camera = (rotate_camera + 1)% 2;
         break;
-    case 'o':
+    case 'j':
         rotate_object = (rotate_object + 1)% 2;
         break;
     default:

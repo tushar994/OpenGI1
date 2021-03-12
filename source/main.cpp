@@ -123,6 +123,7 @@ void tick_elements() {
     if(rotate_camera){
         camera_rotation_angle += 1;
     }
+
 }
 
 /* Initialize the OpenGL rendering properties */
