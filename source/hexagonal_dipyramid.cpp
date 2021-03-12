@@ -1,13 +1,13 @@
 #include "hexagonal_dipyramid.h"
 #include "main.h"
 
-speed = 1;
+int speed = 1;
 Hexagonal_dipyramid::Hexagonal_dipyramid(float x, float y, color_t color)
 {
     this->position = glm::vec3(x, y, 0);
     this->rotation = 0;
     float a = 1.0;
-    float b = sqrt(3)/2
+    float b = sqrt(3)/2;
     float c = 1/2;
     float d = 0.0;
     // Our vertices. Three consecutive floats give a 3D vertex; Three consecutive vertices give a triangle.
