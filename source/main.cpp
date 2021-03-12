@@ -26,7 +26,7 @@ int rotate_object = 0;
 float cam_x = 0, cam_y = 0, cam_z = 0;
 float cam_speed = 0.1;
 // speed of object translation
-int object_speed = 0.1;
+float object_speed = 0.1;
 /* Render the scene with openGL */
 /* Edit this function according to your assignment */
 void draw() {
