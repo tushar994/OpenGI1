@@ -20,8 +20,8 @@ float camera_rotation_angle = 0;
 
 Timer t60(1.0 / 60);
 
-float rotate_camera = 0;
-float rotate_object = 0;
+int rotate_camera = 0;
+int rotate_object = 0;
 // for translation of camera
 float cam_x = 0, cam_y = 0, cam_z = 0;
 float cam_speed = 0.1;

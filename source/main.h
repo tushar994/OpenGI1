@@ -84,7 +84,7 @@ extern const color_t COLOR_BACKGROUND;
 extern const color_t COLOR_BLUE;
 
 // rotating_camera variable
-extern float rotate_camera;
-extern float rotate_object;
+extern int rotate_camera;
+extern int rotate_object;
 
 #endif
