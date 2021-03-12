@@ -93,7 +93,7 @@ void Hexagonal_dipyramid::set_position(float x, float y)
 void Hexagonal_dipyramid::tick()
 {
     if(rotate_object){
-        this->rotation += speed;
+        this->rotation += 1;
     }
     // this->position.x -= speed;
     // this->position.y -= speed;
