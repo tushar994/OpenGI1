@@ -20,11 +20,11 @@ float camera_rotation_angle = 0;
 
 Timer t60(1.0 / 60);
 
-int rotate_camera = 0;
-int rotate_object = 0;
+float rotate_camera = 0;
+float rotate_object = 0;
 // for translation of camera
-int cam_x = 0, cam_y = 0, cam_z = 0;
-int cam_speed = 0.1;
+float cam_x = 0, cam_y = 0, cam_z = 0;
+float cam_speed = 0.1;
 // speed of object translation
 int object_speed = 0.1;
 /* Render the scene with openGL */
