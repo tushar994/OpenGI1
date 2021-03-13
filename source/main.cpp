@@ -80,39 +80,51 @@ void tick_input(GLFWwindow *window) {
     int x = glfwGetKey(window, GLFW_KEY_X);
     if (a) {
         // Do something
+        printf('a12');
         cam_z += cam_speed;
     }
     if(d){
+        printf('11');
         cam_z -= cam_speed;
     }
     if(w){
+        printf('a10');
         cam_y += cam_speed;
     }
     if(s){
+        printf('a9');
         cam_y -= cam_speed;
     }
     if(x){
+        printf('a8');
         cam_x -= cam_speed;
     }
     if(z){
+        printf('a7');
         cam_z += cam_speed;
     }
     if(left){
+        printf('a6');
         ball1.position.z +=object_speed;
     }
     if(right){
+        printf('a5');
         ball1.position.z -= object_speed;
     }
     if(up){
+        printf('a4');
         ball1.position.y += object_speed;
     }
     if(down){
+        printf('a3');
         ball1.position.y -= object_speed;
     }
     if(m){
+        printf('a2');
         ball1.position.x += object_speed;
     }
     if(n){
+        printf('a1');
         ball1.position.x -= object_speed;
     }
 
