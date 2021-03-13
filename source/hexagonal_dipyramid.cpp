@@ -63,10 +63,10 @@ Hexagonal_dipyramid::Hexagonal_dipyramid(float x, float y, color_t color)
         -c,-b,d,
         -a,d,d},
         };
-        color_t colors[3] = {COLOR_BLUE, COLOR_GREEN, COLOR_RED};
+        color_t colors[4] = {COLOR_BLUE, COLOR_GREEN, COLOR_RED, COLOR_BRO};
     for(int i=0;i<12;i++){
 
-        this->object[i] = create3DObject(GL_TRIANGLES, 1 * 3, vertex_buffer_data[i], colors[i%3], GL_FILL);
+        this->object[i] = create3DObject(GL_TRIANGLES, 1 * 3, vertex_buffer_data[i], colors[i%4], GL_FILL);
     }
 }
 
