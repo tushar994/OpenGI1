@@ -81,7 +81,7 @@ void Hexagonal_dipyramid::draw(glm::mat4 VP)
     glm::mat4 MVP = VP * Matrices.model;
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
     for(int i=0;i<12;i++){
-        printf("what");
+        // printf("what");
         draw3DObject(this->object[i]);
     }
 }
