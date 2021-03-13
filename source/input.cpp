@@ -71,6 +71,7 @@ void keyboardChar(GLFWwindow *window, unsigned int key) {
         cam_x1 = ball1.position.x;
         cam_z1 = ball1.position.z;
         cam_y1 = ball1.position.y;
+        break;
     case '2':
         cam_x = 5;
         cam_z = -4;
@@ -79,7 +80,8 @@ void keyboardChar(GLFWwindow *window, unsigned int key) {
         cam_x1 = ball1.position.x;
         cam_z1 = ball1.position.z;
         cam_y1 = ball1.position.y;
-    case '2':
+        break;
+    case '3':
         cam_x = -3;
         cam_z = 2;
         cam_y = 7;
@@ -87,6 +89,7 @@ void keyboardChar(GLFWwindow *window, unsigned int key) {
         cam_x1 = ball1.position.x;
         cam_z1 = ball1.position.z;
         cam_y1 = ball1.position.y;
+        break;
     default:
         break;
     }

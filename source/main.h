@@ -90,7 +90,7 @@ extern int rotate_camera;
 extern int rotate_object;
 
 // for camera position and orientation
-extern float cam_x = 0, cam_y = 0, cam_z = 0;
-extern float cam_x1 = 0, cam_y1 = 0, cam_z1 = 0;
-extern float camera_rotation_angle = 0;
+extern float cam_x , cam_y , cam_z ;
+extern float cam_x1 , cam_y1, cam_z1 ;
+extern float camera_rotation_angle;
 #endif
