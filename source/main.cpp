@@ -2,6 +2,7 @@
 #include "timer.h"
 #include "ball.h"
 #include "hexagonal_dipyramid.h"
+#include "objects.h"
 
 using namespace std;
 
@@ -24,6 +25,7 @@ int rotate_camera = 0;
 int rotate_object = 0;
 // for translation of camera
 float cam_x = 0, cam_y = 0, cam_z = 0;
+float cam_x1 = 0, cam_y1 = 0, cam_z1 = 0;
 float cam_speed = 0.1;
 // speed of object translation
 float object_speed = 0.1;
@@ -41,7 +43,7 @@ void draw() {
     glm::vec3 eye ( cam_x + 5*cos(camera_rotation_angle*M_PI/180.0f), cam_y+ 0, cam_z + 5*sin(camera_rotation_angle*M_PI/180.0f) );
     // Target - Where is the camera looking at.  Don't change unless you are sure!!
     // glm::vec3 target (0, 0, 0);
-    glm::vec3 target (cam_x, cam_y, cam_z);
+    glm::vec3 target (cam_x1, cam_y1, cam_z1);
     // Up - Up vector defines tilt of camera.  Don't change unless you are sure!!
     glm::vec3 up (0, 1, 0);
 
@@ -80,51 +82,57 @@ void tick_input(GLFWwindow *window) {
     int x = glfwGetKey(window, GLFW_KEY_X);
     if (a) {
         // Do something
-        printf("a12");
+        // printf("a12");
         cam_z += cam_speed;
+        cam_z1 += cam_speed;
     }
     if(d){
-        printf("11");
+        // printf("11");
         cam_z -= cam_speed;
+        cam_z1 -= cam_speed;
     }
     if(w){
-        printf("a10");
+        // printf("a10");
         cam_y += cam_speed;
+        cam_y1 += cam_speed;
     }
     if(s){
-        printf("a9");
+        // printf("a9");
         cam_y -= cam_speed;
+        cam_y1 -= cam_speed;
     }
     if(x){
-        printf("a8");
+        // printf("a8");
         cam_x -= cam_speed;
+        cam_x1 -= cam_speed;
     }
     if(z){
-        printf("a7");
+        // printf("a7");
         cam_z += cam_speed;
+        cam_z1 += cam_speed;
     }
     if(left){
-        printf("a6");
+        // printf("a6");
         ball1.position.z +=object_speed;
     }
     if(right){
-        printf("a5");
+        // printf("a5");
         ball1.position.z -= object_speed;
     }
     if(up){
-        printf("a4");
+        // printf("a4");
         ball1.position.y += object_speed;
     }
     if(down){
-        printf("a3");
+        // printf("a3");
         ball1.position.y -= object_speed;
     }
     if(m){
-        printf("a2");
+        // printf("a2");
         ball1.position.x += object_speed;
     }
     if(n){
-        printf("a1");
+        // printf("a1");
         ball1.position.x -= object_speed;
     }
 
@@ -133,6 +141,16 @@ void tick_input(GLFWwindow *window) {
 void tick_elements() {
     ball1.tick();
     if(rotate_camera){
+        ball1.position.x = 0;
+        ball1.position.y = 0;
+        ball1.position.z = 0;
+        cam_x1 = 0;
+        cam_y1 = 0;
+        cam_z1 = 0;
+        cam_x = 0;
+        cam_z = 0;
+        cam_y = 0;
+        rotate_camera = 0;
         camera_rotation_angle += 1;
     }
 

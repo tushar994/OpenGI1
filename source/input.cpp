@@ -12,6 +12,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 
 #include "main.h"
+#include "objects.h"
 
 bool   cannon_keyboard_input = true;
 bool   drag_pan = false, old_cki;
@@ -62,6 +63,30 @@ void keyboardChar(GLFWwindow *window, unsigned int key) {
     case 'j':
         rotate_object = (rotate_object + 1)% 2;
         break;
+    case '1':
+        cam_x = 3;
+        cam_z = 3;
+        cam_y = 3;
+        camera_rotation_angle = 90;
+        cam_x1 = ball1.position.x;
+        cam_z1 = ball1.position.z;
+        cam_y1 = ball1.position.y;
+    case '2':
+        cam_x = 5;
+        cam_z = -4;
+        cam_y = 3;
+        camera_rotation_angle = 45;
+        cam_x1 = ball1.position.x;
+        cam_z1 = ball1.position.z;
+        cam_y1 = ball1.position.y;
+    case '2':
+        cam_x = -3;
+        cam_z = 2;
+        cam_y = 7;
+        camera_rotation_angle = 0;
+        cam_x1 = ball1.position.x;
+        cam_z1 = ball1.position.z;
+        cam_y1 = ball1.position.y;
     default:
         break;
     }

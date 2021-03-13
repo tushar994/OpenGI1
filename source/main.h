@@ -14,6 +14,7 @@
 #include <glm/gtx/transform.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
+
 struct color_t {
     int r;
     int g;
@@ -88,4 +89,8 @@ extern const color_t COLOR_BRO;
 extern int rotate_camera;
 extern int rotate_object;
 
+// for camera position and orientation
+extern float cam_x = 0, cam_y = 0, cam_z = 0;
+extern float cam_x1 = 0, cam_y1 = 0, cam_z1 = 0;
+extern float camera_rotation_angle = 0;
 #endif

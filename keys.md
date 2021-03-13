@@ -2,8 +2,10 @@
 `Q` - quit
 
 `p` - rotate camera
-`o` - rotate object
+`j` - rotate object
 
 `wasdzx` - translate camera
 
 `arrowws keys + nm` - object
+
+`123` - configurations
