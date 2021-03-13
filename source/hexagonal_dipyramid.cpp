@@ -39,29 +39,29 @@ Hexagonal_dipyramid::Hexagonal_dipyramid(float x, float y, color_t color)
         -a,d,d},
 
         // the bottom part
-        // {d,d,-a,
-        // -a,d,d,
-        // -c,b,d},
+        {d,d,-a,
+        -a,d,d,
+        -c,b,d},
         
-        // {d,d,-a,
-        // -c,b,d,
-        // c,b,d},
+        {d,d,-a,
+        -c,b,d,
+        c,b,d},
 
-        // {d,d,-a,
-        // c,b,d,
-        // a,d,d},
+        {d,d,-a,
+        c,b,d,
+        a,d,d},
 
-        // {d,d,-a,
-        // a,d,d,
-        // c,-b,d},
+        {d,d,-a,
+        a,d,d,
+        c,-b,d},
 
-        // {d,d,-a,
-        // c,-b,d,
-        // -c,-b,d},
+        {d,d,-a,
+        c,-b,d,
+        -c,-b,d},
 
-        // {d,d,-a,
-        // -c,-b,d,
-        // -a,d,d},
+        {d,d,-a,
+        -c,-b,d,
+        -a,d,d},
         };
         color_t colors[3] = {COLOR_BLUE, COLOR_GREEN, COLOR_RED};
     for(int i=0;i<12;i++){
@@ -81,6 +81,7 @@ void Hexagonal_dipyramid::draw(glm::mat4 VP)
     glm::mat4 MVP = VP * Matrices.model;
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
     for(int i=0;i<12;i++){
+        printf("what");
         draw3DObject(this->object[i]);
     }
 }
