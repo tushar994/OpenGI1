@@ -92,7 +92,7 @@ void keyboardChar(GLFWwindow *window, unsigned int key) {
         break;
     case 's':
     printf("whatdddd");
-        draw1 = (draw1 + 1 )% 3;
+        var_object_det = (var_object_det + 1 )% 3;
         printf("what");
         break;
     default:

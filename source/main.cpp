@@ -19,7 +19,7 @@ GLFWwindow *window;
 Hexagonal_dipyramid ball1;
 Disphenoid ball2;
 Square_Pyramid ball3;
-int draw1 = 1;
+int var_object_det = 1;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
@@ -67,13 +67,13 @@ void draw() {
     glm::mat4 MVP;  // MVP = Projection * View * Model
 
     // Scene render
-    if(draw1 == 0){
+    if(var_object_det == 0){
         ball1.draw(VP);
     }
-    else if(draw1 ==1){
+    else if(var_object_det ==1){
         ball2.draw(VP);
     }
-    else if(draw1==2){
+    else if(var_object_det==2){
         ball3.draw(VP);
     }
 }
@@ -197,6 +197,7 @@ void initGL(GLFWwindow *window, int width, int height) {
 
     ball1 = Hexagonal_dipyramid(0, 0, COLOR_RED);
     ball2 = Disphenoid(0, 0, COLOR_RED);
+    ball3 = Square_Pyramid(0, 0, COLOR_RED);
 
     // Create and compile our GLSL program from the shaders
     programID = LoadShaders("../source/shaders/shader.vert", "../source/shaders/shader.frag");
