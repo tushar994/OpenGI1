@@ -9,3 +9,5 @@
 `arrowws keys + nm` - object
 
 `123` - configurations
+
+`s` - switch shapes

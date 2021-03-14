@@ -72,7 +72,7 @@ Square_Pyramid::Square_Pyramid(float x, float y, color_t color)
 
         this->object[i] = create3DObject(GL_TRIANGLES, 1 * 3, vertex_buffer_data[i], colors[i%8], GL_FILL);
     }
-    for(int i=0;i<8,i+=2){
+    for(int i=0;i<8;i+=2){
         this->object[i+8] = create3DObject(GL_TRIANGLES, 1 * 3, vertex_buffer_data[i+8], colors[i%8], GL_FILL);
         this->object[i+9] = create3DObject(GL_TRIANGLES, 1 * 3, vertex_buffer_data[i+9], colors[i%8], GL_FILL);
     }
