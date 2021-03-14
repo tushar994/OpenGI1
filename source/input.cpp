@@ -91,9 +91,9 @@ void keyboardChar(GLFWwindow *window, unsigned int key) {
         cam_y1 = ball1.position.y;
         break;
     case 'b':
-    printf("whatdddd");
+    // printf("whatdddd");
         var_object_det = (var_object_det + 1 )% 3;
-        printf("what");
+        // printf("what");
         break;
     default:
         break;
