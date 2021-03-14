@@ -17,7 +17,7 @@ GLFWwindow *window;
 
 Hexagonal_dipyramid ball1;
 Disphenoid ball2;
-int draw = 1;
+int draw1 = 1;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
@@ -65,10 +65,10 @@ void draw() {
     glm::mat4 MVP;  // MVP = Projection * View * Model
 
     // Scene render
-    if(draw == 0){
+    if(draw1 == 0){
         ball1.draw(VP);
     }
-    else if(draw ==1){
+    else if(draw1 ==1){
         ball2.draw(VP);
     }
 }
