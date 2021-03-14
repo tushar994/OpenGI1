@@ -2,6 +2,7 @@
 #include "timer.h"
 #include "ball.h"
 #include "hexagonal_dipyramid.h"
+#include "square_pyramid.h"
 #include "disphenoid.h"
 #include "objects.h"
 
@@ -17,6 +18,7 @@ GLFWwindow *window;
 
 Hexagonal_dipyramid ball1;
 Disphenoid ball2;
+Square_Pyramid ball3;
 int draw1 = 1;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
@@ -71,6 +73,9 @@ void draw() {
     else if(draw1 ==1){
         ball2.draw(VP);
     }
+    else if(draw1==2){
+        ball3.draw(VP);
+    }
 }
 
 void tick_input(GLFWwindow *window) {
@@ -123,31 +128,37 @@ void tick_input(GLFWwindow *window) {
         // printf("a6");
         ball1.position.z +=object_speed;
         ball2.position.z +=object_speed;
+        ball3.position.z +=object_speed;
     }
     if(right){
         // printf("a5");
         ball1.position.z -= object_speed;
         ball2.position.z -= object_speed;
+        ball3.position.z -= object_speed;
     }
     if(up){
         // printf("a4");
         ball1.position.y += object_speed;
         ball2.position.y += object_speed;
+        ball3.position.y += object_speed;
     }
     if(down){
         // printf("a3");
         ball1.position.y -= object_speed;
         ball2.position.y -= object_speed;
+        ball3.position.y -= object_speed;
     }
     if(m){
         // printf("a2");
         ball1.position.x += object_speed;
         ball2.position.x += object_speed;
+        ball3.position.x += object_speed;
     }
     if(n){
         // printf("a1");
         ball1.position.x -= object_speed;
         ball2.position.x -= object_speed;
+        ball3.position.x -= object_speed;
     }
 
 }
@@ -155,6 +166,7 @@ void tick_input(GLFWwindow *window) {
 void tick_elements() {
     ball1.tick();
     ball2.tick();
+    ball3.tick();
     if(rotate_camera){
         ball1.position.x = 0;
         ball1.position.y = 0;
@@ -162,6 +174,9 @@ void tick_elements() {
         ball2.position.x = 0;
         ball2.position.y = 0;
         ball2.position.z = 0;
+        ball3.position.x = 0;
+        ball3.position.y = 0;
+        ball3.position.z = 0;
         cam_x1 = 0;
         cam_y1 = 0;
         cam_z1 = 0;

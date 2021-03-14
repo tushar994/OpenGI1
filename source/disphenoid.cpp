@@ -62,10 +62,10 @@ Disphenoid::Disphenoid(float x, float y, color_t color)
         1.0f,-1.56f,0.0f,
         1.28f,0.41f,0.0f},
         };
-        color_t colors[4] = {COLOR_BLUE, COLOR_GREEN, COLOR_RED, COLOR_BRO};
+        color_t colors[8] = {COLOR_BLUE, COLOR_GREEN, COLOR_RED, COLOR_BRO, COLOR_1, COLOR_2, COLOR_3, COLOR_4};
     for(int i=0;i<12;i++){
 
-        this->object[i] = create3DObject(GL_TRIANGLES, 1 * 3, vertex_buffer_data[i], colors[i%4], GL_FILL);
+        this->object[i] = create3DObject(GL_TRIANGLES, 1 * 3, vertex_buffer_data[i], colors[i%8], GL_FILL);
     }
 }
 
