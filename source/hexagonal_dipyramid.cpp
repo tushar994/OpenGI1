@@ -1,7 +1,7 @@
 #include "hexagonal_dipyramid.h"
 #include "main.h"
 
-float speed = 0.1;
+
 Hexagonal_dipyramid::Hexagonal_dipyramid(float x, float y, color_t color)
 {
     this->position = glm::vec3(x, y, 0);
