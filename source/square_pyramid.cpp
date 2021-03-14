@@ -67,11 +67,13 @@ Square_Pyramid::Square_Pyramid(float x, float y, color_t color)
         1.0f,-1.0f,1.0f,
         1.0f,-1.0f,-1.0f}
         };
+        printf("here");
         color_t colors[8] = {COLOR_BLUE, COLOR_GREEN, COLOR_RED, COLOR_BRO, COLOR_1, COLOR_2, COLOR_3, COLOR_4};
     for(int i=0;i<8;i++){
 
         this->object[i] = create3DObject(GL_TRIANGLES, 1 * 3, vertex_buffer_data[i], colors[i%8], GL_FILL);
     }
+    printf("here1");
     for(int i=0;i<8;i++){
         if(i%2==0){
             this->object[i+8] = create3DObject(GL_TRIANGLES, 1 * 3, vertex_buffer_data[i+8], colors[i%8], GL_FILL);
@@ -80,6 +82,7 @@ Square_Pyramid::Square_Pyramid(float x, float y, color_t color)
             this->object[i+8] = create3DObject(GL_TRIANGLES, 1 * 3, vertex_buffer_data[i+8], colors[(i-1)%8], GL_FILL);
         }
     }
+    printf("here2");
 }
 
 void Square_Pyramid::draw(glm::mat4 VP)
