@@ -92,6 +92,8 @@ void keyboardChar(GLFWwindow *window, unsigned int key) {
         break;
     case 's':
         draw1 = (draw1 + 1 )% 3;
+        printf("what");
+        break;
     default:
         break;
     }
