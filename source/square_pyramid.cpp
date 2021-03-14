@@ -72,9 +72,13 @@ Square_Pyramid::Square_Pyramid(float x, float y, color_t color)
 
         this->object[i] = create3DObject(GL_TRIANGLES, 1 * 3, vertex_buffer_data[i], colors[i%8], GL_FILL);
     }
-    for(int i=0;i<8;i+=2){
-        this->object[i+8] = create3DObject(GL_TRIANGLES, 1 * 3, vertex_buffer_data[i+8], colors[i%8], GL_FILL);
-        this->object[i+9] = create3DObject(GL_TRIANGLES, 1 * 3, vertex_buffer_data[i+9], colors[i%8], GL_FILL);
+    for(int i=0;i<8;i++){
+        if(i%2==0){
+            this->object[i+8] = create3DObject(GL_TRIANGLES, 1 * 3, vertex_buffer_data[i+8], colors[i%8], GL_FILL);
+        }
+        else{
+            this->object[i+8] = create3DObject(GL_TRIANGLES, 1 * 3, vertex_buffer_data[i+8], colors[(i-1)%8], GL_FILL);
+        }
     }
 }
 
@@ -88,7 +92,7 @@ void Square_Pyramid::draw(glm::mat4 VP)
     Matrices.model *= (translate * rotate);
     glm::mat4 MVP = VP * Matrices.model;
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
-    for(int i=0;i<12;i++){
+    for(int i=0;i<16;i++){
         // printf("what");
         draw3DObject(this->object[i]);
     }
