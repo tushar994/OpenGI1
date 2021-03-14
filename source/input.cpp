@@ -90,7 +90,7 @@ void keyboardChar(GLFWwindow *window, unsigned int key) {
         cam_z1 = ball1.position.z;
         cam_y1 = ball1.position.y;
         break;
-    case 's':
+    case 'b':
     printf("whatdddd");
         var_object_det = (var_object_det + 1 )% 3;
         printf("what");

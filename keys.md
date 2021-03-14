@@ -10,4 +10,4 @@
 
 `123` - configurations
 
-`s` - switch shapes
+`b` - switch shapes
