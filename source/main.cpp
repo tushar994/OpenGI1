@@ -154,6 +154,7 @@ void tick_input(GLFWwindow *window) {
 
 void tick_elements() {
     ball1.tick();
+    ball2.tick();
     if(rotate_camera){
         ball1.position.x = 0;
         ball1.position.y = 0;
