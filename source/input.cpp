@@ -91,6 +91,7 @@ void keyboardChar(GLFWwindow *window, unsigned int key) {
         cam_y1 = ball1.position.y;
         break;
     case 's':
+    printf("whatdddd");
         draw1 = (draw1 + 1 )% 3;
         printf("what");
         break;
