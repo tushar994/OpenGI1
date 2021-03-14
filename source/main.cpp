@@ -121,8 +121,8 @@ void tick_input(GLFWwindow *window) {
     }
     if(z){
         // printf("a7");
-        cam_z += cam_speed;
-        cam_z1 += cam_speed;
+        cam_x += cam_speed;
+        cam_x1 += cam_speed;
     }
     if(left){
         // printf("a6");

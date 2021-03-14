@@ -10,7 +10,7 @@ Square_Pyramid::Square_Pyramid(float x, float y, color_t color)
     float b = 0.41;
     float c = 1.28;
     float d = 0.0;
-    printf("start");
+    // printf("start");
     // Our vertices. Three consecutive floats give a 3D vertex; Three consecutive vertices give a triangle.
     // A cube has 6 faces with 2 triangles each, so this makes 6*2=12 triangles, and 12*3 vertices
     static const GLfloat vertex_buffer_data[20][9] = {
@@ -68,13 +68,13 @@ Square_Pyramid::Square_Pyramid(float x, float y, color_t color)
         1.0f,-1.0f,1.0f,
         1.0f,-1.0f,-1.0f}
         };
-        printf("here");
+        // printf("here");
         color_t colors[8] = {COLOR_BLUE, COLOR_GREEN, COLOR_RED, COLOR_BRO, COLOR_1, COLOR_2, COLOR_3, COLOR_4};
     for(int i=0;i<8;i++){
 
         this->object[i] = create3DObject(GL_TRIANGLES, 1 * 3, vertex_buffer_data[i], colors[i%8], GL_FILL);
     }
-    printf("here1");
+    // printf("here1");
     for(int i=0;i<8;i++){
         if(i%2==0){
             this->object[i+8] = create3DObject(GL_TRIANGLES, 1 * 3, vertex_buffer_data[i+8], colors[i%8], GL_FILL);
@@ -83,7 +83,7 @@ Square_Pyramid::Square_Pyramid(float x, float y, color_t color)
             this->object[i+8] = create3DObject(GL_TRIANGLES, 1 * 3, vertex_buffer_data[i+8], colors[(i-1)%8], GL_FILL);
         }
     }
-    printf("here2");
+    // printf("here2");
 }
 
 void Square_Pyramid::draw(glm::mat4 VP)
