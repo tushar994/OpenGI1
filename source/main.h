@@ -93,4 +93,6 @@ extern int rotate_object;
 extern float cam_x , cam_y , cam_z ;
 extern float cam_x1 , cam_y1, cam_z1 ;
 extern float camera_rotation_angle;
+
+extern int draw;
 #endif

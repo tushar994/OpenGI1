@@ -2,6 +2,7 @@
 #include "timer.h"
 #include "ball.h"
 #include "hexagonal_dipyramid.h"
+#include "disphenoid.h"
 #include "objects.h"
 
 using namespace std;
@@ -15,6 +16,8 @@ GLFWwindow *window;
 **************************/
 
 Hexagonal_dipyramid ball1;
+Disphenoid ball2;
+int draw = 0;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
@@ -62,7 +65,12 @@ void draw() {
     glm::mat4 MVP;  // MVP = Projection * View * Model
 
     // Scene render
-    ball1.draw(VP);
+    if(draw == 0){
+        ball1.draw(VP);
+    }
+    else if(draw ==1){
+        ball2.draw(VP);
+    }
 }
 
 void tick_input(GLFWwindow *window) {
@@ -114,26 +122,32 @@ void tick_input(GLFWwindow *window) {
     if(left){
         // printf("a6");
         ball1.position.z +=object_speed;
+        ball2.position.z +=object_speed;
     }
     if(right){
         // printf("a5");
         ball1.position.z -= object_speed;
+        ball2.position.z -= object_speed;
     }
     if(up){
         // printf("a4");
         ball1.position.y += object_speed;
+        ball2.position.y += object_speed;
     }
     if(down){
         // printf("a3");
         ball1.position.y -= object_speed;
+        ball2.position.y -= object_speed;
     }
     if(m){
         // printf("a2");
         ball1.position.x += object_speed;
+        ball2.position.x += object_speed;
     }
     if(n){
         // printf("a1");
         ball1.position.x -= object_speed;
+        ball2.position.x -= object_speed;
     }
 
 }
@@ -144,6 +158,9 @@ void tick_elements() {
         ball1.position.x = 0;
         ball1.position.y = 0;
         ball1.position.z = 0;
+        ball2.position.x = 0;
+        ball2.position.y = 0;
+        ball2.position.z = 0;
         cam_x1 = 0;
         cam_y1 = 0;
         cam_z1 = 0;
@@ -163,6 +180,7 @@ void initGL(GLFWwindow *window, int width, int height) {
     // Create the models
 
     ball1 = Hexagonal_dipyramid(0, 0, COLOR_RED);
+    ball2 = Disphenoid(0, 0, COLOR_RED);
 
     // Create and compile our GLSL program from the shaders
     programID = LoadShaders("../source/shaders/shader.vert", "../source/shaders/shader.frag");
