@@ -14,59 +14,56 @@ Hexagonal_dipyramid::Hexagonal_dipyramid(float x, float y, color_t color)
     // A cube has 6 faces with 2 triangles each, so this makes 6*2=12 triangles, and 12*3 vertices
     static const GLfloat vertex_buffer_data[12][9] = {
         // the top part
-        {d,d,a,
-        -a,d,d,
-        -c,b,d},
-        
-        {d,d,a,
-        -c,b,d,
-        c,b,d},
+        {0.0f,0.0f,1.0f,
+        -0.86f,0.5f,0.0f,
+        0.0f,1.0f,0.0f},
+        {0.0f,0.0f,1.0f,
+        0.86f,0.5f,0.0f,
+        0.0f,1.0f,0.0f},
 
-        {d,d,a,
-        c,b,d,
-        a,d,d},
+        {0.0f,0.0f,1.0f,
+        0.86f,0.5f,0.0f,
+        0.86f,-0.5f,0.0f},
 
-        {d,d,a,
-        a,d,d,
-        c,-b,d},
+        {0.0f,0.0f,1.0f,
+        0.0f,-1.0f,0.0f,
+        0.86f,-0.5f,0.0f},
 
-        {d,d,a,
-        c,-b,d,
-        -c,-b,d},
+        {0.0f,0.0f,1.0f,
+        0.0f,-1.0f,0.0f,
+        -0.86f,-0.5f,0.0f},
 
-        {d,d,a,
-        -c,-b,d,
-        -a,d,d},
+        {0.0f,0.0f,1.0f,
+        -0.86f,0.5f,0.0f,
+        -0.86f,-0.5f,0.0f},
 
-        // the bottom part
-        {d,d,-a,
-        -a,d,d,
-        -c,b,d},
-        
-        {d,d,-a,
-        -c,b,d,
-        c,b,d},
+        {0.0f,0.0f,-1.0f,
+        -0.86f,0.5f,0.0f,
+        0.0f,1.0f,0.0f},
+        {0.0f,0.0f,-1.0f,
+        0.86f,0.5f,0.0f,
+        0.0f,1.0f,0.0f},
 
-        {d,d,-a,
-        c,b,d,
-        a,d,d},
+        {0.0f,0.0f,-1.0f,
+        0.86f,0.5f,0.0f,
+        0.86f,-0.5f,0.0f},
 
-        {d,d,-a,
-        a,d,d,
-        c,-b,d},
+        {0.0f,0.0f,-1.0f,
+        0.0f,-1.0f,0.0f,
+        0.86f,-0.5f,0.0f},
 
-        {d,d,-a,
-        c,-b,d,
-        -c,-b,d},
+        {0.0f,0.0f,-1.0f,
+        0.0f,-1.0f,0.0f,
+        -0.86f,-0.5f,0.0f},
 
-        {d,d,-a,
-        -c,-b,d,
-        -a,d,d},
+        {0.0f,0.0f,-1.0f,
+        -0.86f,0.5f,0.0f,
+        -0.86f,-0.5f,0.0f},
         };
-        color_t colors[4] = {COLOR_BLUE, COLOR_GREEN, COLOR_RED, COLOR_BRO};
+        color_t colors[8] = {COLOR_BLUE, COLOR_GREEN, COLOR_RED, COLOR_BRO, COLOR_1, COLOR_2, COLOR_3, COLOR_4};
     for(int i=0;i<12;i++){
 
-        this->object[i] = create3DObject(GL_TRIANGLES, 1 * 3, vertex_buffer_data[i], colors[i%4], GL_FILL);
+        this->object[i] = create3DObject(GL_TRIANGLES, 1 * 3, vertex_buffer_data[i], colors[i%8], GL_FILL);
     }
 }
 
