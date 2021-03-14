@@ -90,6 +90,8 @@ void keyboardChar(GLFWwindow *window, unsigned int key) {
         cam_z1 = ball1.position.z;
         cam_y1 = ball1.position.y;
         break;
+    case 's':
+        draw1 = (draw1 + 1 )% 3;
     default:
         break;
     }
