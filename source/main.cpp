@@ -17,7 +17,7 @@ GLFWwindow *window;
 
 Hexagonal_dipyramid ball1;
 Disphenoid ball2;
-int draw = 0;
+int draw = 1;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
